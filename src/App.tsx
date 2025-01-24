@@ -1,13 +1,10 @@
+import LoginPage from "./app/login/page";
 import { Button } from "./components/ui/button";
 
 function App(){
 
   return(
-    <>
-    <Button>
-      Click me 
-    </Button>
-    </>
+    <LoginPage />
   )
 }
 export default App;
