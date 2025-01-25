@@ -4,9 +4,13 @@ import {
   BookOpen,
   Bot,
   Cctv,
+  ChartNoAxesColumnIncreasing,
   Command,
+  Database,
+  FileText,
   Frame,
   GalleryVerticalEnd,
+  LayoutDashboard,
   Map,
   PieChart,
   Settings2,
@@ -42,29 +46,30 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Général",
       url: "#",
-      icon: SquareTerminal,
+      icon: LayoutDashboard,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "Tableau de bord",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "Tous les Textes",
           url: "#",
+          icon: FileText, // Added FileText icon here
         },
         {
-          title: "Settings",
+          title: "Mes Textes",
           url: "#",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Analyse",
       url: "#",
-      icon: Bot,
+      icon:ChartNoAxesColumnIncreasing,
       items: [
         {
           title: "Genesis",
