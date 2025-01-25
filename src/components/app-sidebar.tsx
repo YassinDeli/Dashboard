@@ -8,6 +8,7 @@ import {
   ChartNoAxesColumnIncreasing,
   CheckCheck,
   CircleHelp,
+  ClipboardCheck,
   Command,
   Database,
   FileSearch,
@@ -15,6 +16,7 @@ import {
   Flag,
   Frame,
   GalleryVerticalEnd,
+  Info,
   LayoutDashboard,
   Logs,
   Map,
@@ -106,48 +108,41 @@ const data = {
       ],
     },
     {
-      title: "Documentation",
+      title: "Etat Des Actions",
       url: "#",
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
+          title: "Bilan des Actions",
           url: "#",
+          icon: ClipboardCheck,
         },
         {
-          title: "Get Started",
+          title: "Toutes les Actions",
           url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
+          icon:Logs
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Applicabilté",
       url: "#",
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "Applicables",
           url: "#",
+          icon: ClipboardCheck,
         },
         {
-          title: "Team",
+          title: "A Vérifier",
           url: "#",
+          icon: CircleHelp,
         },
         {
-          title: "Billing",
+          title: "Pour Info",
           url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
+          icon: Info,
         },
       ],
     },
@@ -179,7 +174,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        {/* <NavProjects projects={data.projects} /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
