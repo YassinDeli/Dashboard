@@ -3,6 +3,7 @@ import {
   AudioWaveform,
   BookOpen,
   Bot,
+  Cctv,
   Command,
   Frame,
   GalleryVerticalEnd,
@@ -33,20 +34,11 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      name: "Veille Réglementaire",
+      logo: Cctv ,
+      
     },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
+   
   ],
   navMain: [
     {
