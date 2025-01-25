@@ -1,12 +1,10 @@
-import { Button } from "./components/ui/button";
+import Page from "./app/dashboard/page";
 
 function App(){
 
   return(
     <>
-    <Button>
-      Click me 
-    </Button>
+    <Page></Page>
     </>
   )
 }
