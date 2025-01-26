@@ -15,6 +15,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import DarkModeToggle from "@/components/DarkModeToggle"; // Import the DarkModeToggle component
+import ProfileDropdown from "@/components/ProfileDropdown"; // Import the ProfileDropdown component
 
 export default function Page() {
   return (
@@ -40,6 +41,7 @@ export default function Page() {
             </Breadcrumb>
           </div>
           <div className="ml-auto flex items-center gap-2 px-4">
+            <ProfileDropdown /> {/* Add the ProfileDropdown component here */}
             <DarkModeToggle /> {/* Add the DarkModeToggle component here */}
           </div>
         </header>
