@@ -16,6 +16,42 @@ import {
 } from "../ui/sidebar";
 import DarkModeToggle from "../common/DarkModeToggle";
 import ProfileDropdown from "../common/ProfileDropdown";
+import { PieChartComponent } from "../ui/PieChart"; // Update the path to your PieChart file
+import { RadarChartComponent } from "../ui/RadarChart"; // Update the path to your RadarChart file
+
+const chartData = [
+  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
+  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+  { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
+  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
+  { browser: "other", visitors: 90, fill: "var(--color-other)" },
+];
+
+const chartConfig = {
+  visitors: {
+    label: "Visitors",
+  },
+  chrome: {
+    label: "Chrome",
+    color: "hsl(var(--chart-1))",
+  },
+  safari: {
+    label: "Safari",
+    color: "hsl(var(--chart-2))",
+  },
+  firefox: {
+    label: "Firefox",
+    color: "hsl(var(--chart-3))",
+  },
+  edge: {
+    label: "Edge",
+    color: "hsl(var(--chart-4))",
+  },
+  other: {
+    label: "Other",
+    color: "hsl(var(--chart-5))",
+  },
+} satisfies ChartConfig;
 
 export default function Layout() {
   return (
@@ -30,12 +66,12 @@ export default function Layout() {
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
                   <BreadcrumbLink href="#">
-                    Building Your Application
+                    Général
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                  <BreadcrumbPage>Tableau De Bord</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -51,7 +87,23 @@ export default function Layout() {
             <div className="aspect-video rounded-xl bg-muted/50" />
             <div className="aspect-video rounded-xl bg-muted/50" />
           </div>
-          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+          <div className="grid gap-4 md:grid-cols-3">
+            <PieChartComponent
+              data={chartData}
+              config={chartConfig}
+              title="Ma Base"
+              description="Janvier - juin 2025"
+              footerText=""
+            />
+            <RadarChartComponent /> {/* Add the RadarChart component here */}
+            <PieChartComponent
+              data={chartData}
+              config={chartConfig}
+              title="Ma Base Par Rapport A Base Générale"
+              description="Janvier - juin 2025"
+              footerText=""
+            />
+          </div>
         </div>
       </SidebarInset>
     </SidebarProvider>
