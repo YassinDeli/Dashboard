@@ -1,10 +1,9 @@
-import Page from "./app/dashboard/page";
-
+import Layout from "./components/Layout/Layout";
 function App(){
 
   return(
     <>
-    <Page></Page>
+    <Layout></Layout>
     </>
   )
 }

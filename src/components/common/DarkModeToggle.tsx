@@ -1,7 +1,7 @@
 // components/DarkModeToggle.tsx
 import React, { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 const DarkModeToggle: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -33,9 +33,9 @@ const DarkModeToggle: React.FC = () => {
       "
     >
       {isDarkMode ? (
-        <Sun className="" />
+        <Sun/>
       ) : (
-        <Moon className="" />
+        <Moon/>
       )}
     </Button>
   );

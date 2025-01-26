@@ -1,8 +1,4 @@
-// components/DropdownMenuCheckboxes.tsx
-"use client"
-
-import * as React from "react"
-import { User } from 'lucide-react'; // Import the User icon from Lucide
+import { User } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,18 +6,18 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Button } from "@/components/ui/button"
+} from "../ui/dropdown-menu";
+import { Button } from "../ui/button";
 
 export function DropdownMenuCheckboxes() {
   const handleLogout = () => {
     // Implement logout logic here
-    console.log('Logout');
+    console.log("Logout");
   };
 
   const handleProfile = () => {
     // Implement profile logic here
-    console.log('Profile');
+    console.log("Profile");
   };
 
   const handleLanguageChange = (language: string) => {
@@ -32,7 +28,7 @@ export function DropdownMenuCheckboxes() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-      <Button
+        <Button
           variant="outline"
           size="icon"
           className="overflow-hidden rounded-full"
@@ -43,21 +39,17 @@ export function DropdownMenuCheckboxes() {
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Profile</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={handleProfile}>
-          Profile
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={handleLogout}>
-          Logout
-        </DropdownMenuItem>
+        <DropdownMenuItem onClick={handleProfile}>Profile</DropdownMenuItem>
+        <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuLabel>Language</DropdownMenuLabel>
-        <DropdownMenuItem onClick={() => handleLanguageChange('Français')}>
+        <DropdownMenuItem onClick={() => handleLanguageChange("Français")}>
           Français
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleLanguageChange('Anglais')}>
+        <DropdownMenuItem onClick={() => handleLanguageChange("Anglais")}>
           Anglais
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

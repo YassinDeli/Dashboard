@@ -1,21 +1,16 @@
-import * as React from "react"
+import * as React from "react";
 import {
-  AudioWaveform,
   BookOpen,
-  Bot,
   Cctv,
   ChartLine,
   ChartNoAxesColumnIncreasing,
   CheckCheck,
   CircleHelp,
   ClipboardCheck,
-  Command,
   Database,
   FileSearch,
-  FileText,
   Flag,
   Frame,
-  GalleryVerticalEnd,
   Info,
   LayoutDashboard,
   Logs,
@@ -23,22 +18,20 @@ import {
   OctagonX,
   PieChart,
   Settings2,
-  SquareTerminal,
-} from "lucide-react"
+} from "lucide-react";
 
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
+import { NavMain } from "./nav-main";
+import { NavProjects } from "./nav-projects";
+import { NavUser } from "./nav-user";
+import { TeamSwitcher } from "./team-switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "../ui/sidebar";
 
-// This is sample data.
 const data = {
   user: {
     name: "shadcn",
@@ -48,10 +41,8 @@ const data = {
   teams: [
     {
       name: "Veille Réglementaire",
-      logo: Cctv ,
-      
+      logo: Cctv,
     },
-   
   ],
   navMain: [
     {
@@ -68,42 +59,44 @@ const data = {
         {
           title: "Tous les Textes",
           url: "#",
-          icon: Database, 
+          icon: Database,
         },
         {
           title: "Mes Textes",
           url: "#",
-          icon: Logs, 
+          icon: Logs,
         },
       ],
     },
     {
       title: "Analyse",
       url: "#",
-      icon:ChartNoAxesColumnIncreasing,
+      icon: ChartNoAxesColumnIncreasing,
       items: [
         {
           title: "Non Analysé",
           url: "#",
-          icon:CircleHelp,
+          icon: CircleHelp,
         },
         {
           title: "Non Conformes",
           url: "#",
-          icon:OctagonX,
+          icon: OctagonX,
         },
         {
           title: "Partiel Conformes",
           url: "#",
-          icon:FileSearch,
-        },{
+          icon: FileSearch,
+        },
+        {
           title: "Candidats Conformes",
           url: "#",
-          icon:Flag,
-        },{
+          icon: Flag,
+        },
+        {
           title: "Conformes",
           url: "#",
-          icon:CheckCheck,
+          icon: CheckCheck,
         },
       ],
     },
@@ -120,7 +113,7 @@ const data = {
         {
           title: "Toutes les Actions",
           url: "#",
-          icon:Logs
+          icon: Logs,
         },
       ],
     },
@@ -164,7 +157,7 @@ const data = {
       icon: Map,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -174,12 +167,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        {/* <NavProjects projects={data.projects} /> */}
+        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }

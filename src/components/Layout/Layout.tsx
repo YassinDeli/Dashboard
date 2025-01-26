@@ -1,5 +1,5 @@
 // Dashbord/Page.tsx
-import { AppSidebar } from "@/components/app-sidebar";
+import { AppSidebar } from "../Sidebar/app-sidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,17 +7,17 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
+} from "../ui/breadcrumb";
+import { Separator } from "../ui/separator";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar";
-import DarkModeToggle from "@/components/DarkModeToggle"; // Import the DarkModeToggle component
-import ProfileDropdown from "@/components/ProfileDropdown"; // Import the ProfileDropdown component
+} from "../ui/sidebar";
+import DarkModeToggle from "../common/DarkModeToggle";
+import ProfileDropdown from "../common/ProfileDropdown";
 
-export default function Page() {
+export default function Layout() {
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -41,8 +41,8 @@ export default function Page() {
             </Breadcrumb>
           </div>
           <div className="ml-auto flex items-center gap-2 px-4">
-            <ProfileDropdown /> {/* Add the ProfileDropdown component here */}
-            <DarkModeToggle /> {/* Add the DarkModeToggle component here */}
+            <ProfileDropdown />
+            <DarkModeToggle />
           </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
