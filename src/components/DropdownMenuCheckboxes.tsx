@@ -11,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { Button } from "@/components/ui/button"
 
 export function DropdownMenuCheckboxes() {
   const handleLogout = () => {
@@ -31,9 +32,13 @@ export function DropdownMenuCheckboxes() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="flex items-center focus:outline-none">
-          <User className="w-8 h-8 text-gray-700" /> {/* Use the Lucide User icon */}
-        </button>
+      <Button
+          variant="outline"
+          size="icon"
+          className="overflow-hidden rounded-full"
+        >
+          <User />
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Profile</DropdownMenuLabel>
