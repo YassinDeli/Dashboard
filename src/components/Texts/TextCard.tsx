@@ -17,7 +17,7 @@ export const TextCard = ({
   icon: Icon,
 }: TextCardProps) => {
   return (
-    <Card className="w-64 border shadow-md rounded-2xl">
+    <Card className="w-60 border shadow-md">
       <CardContent className="p-4">
         <div className="flex flex-col items-start">
           <span className={`text-sm font-medium ${titleColor}`}>{title}</span>
