@@ -1,4 +1,5 @@
-import { AppSidebar } from "@/components/app-sidebar"
+// Dashbord/Page.tsx
+import { AppSidebar } from "@/components/app-sidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -6,13 +7,14 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
+import DarkModeToggle from "@/components/DarkModeToggle"; // Import the DarkModeToggle component
 
 export default function Page() {
   return (
@@ -37,6 +39,9 @@ export default function Page() {
               </BreadcrumbList>
             </Breadcrumb>
           </div>
+          <div className="ml-auto flex items-center gap-2 px-4">
+            <DarkModeToggle /> {/* Add the DarkModeToggle component here */}
+          </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid auto-rows-min gap-4 md:grid-cols-3">
@@ -48,5 +53,5 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }

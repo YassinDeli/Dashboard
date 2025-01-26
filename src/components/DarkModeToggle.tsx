@@ -1,0 +1,35 @@
+// components/DarkModeToggle.tsx
+import React, { useState, useEffect } from 'react';
+
+const DarkModeToggle: React.FC = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+      document.documentElement.classList.add(savedTheme);
+    } else {
+      document.documentElement.classList.add('light');
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newTheme = isDarkMode ? 'light' : 'dark';
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.remove(isDarkMode ? 'dark' : 'light');
+    document.documentElement.classList.add(newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
+
+  return (
+    <button
+      onClick={toggleDarkMode}
+      className="p-2 rounded-full bg-muted hover:bg-muted-foreground transition-colors"
+    >
+      {isDarkMode ? '🌞' : '🌙'}
+    </button>
+  );
+};
+
+export default DarkModeToggle;
