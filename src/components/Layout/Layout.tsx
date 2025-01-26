@@ -9,15 +9,14 @@ import {
   BreadcrumbSeparator,
 } from "../ui/breadcrumb";
 import { Separator } from "../ui/separator";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "../ui/sidebar";
+import { SidebarInset, SidebarProvider, SidebarTrigger } from "../ui/sidebar";
 import DarkModeToggle from "../common/DarkModeToggle";
 import ProfileDropdown from "../common/ProfileDropdown";
 import { PieChartComponent } from "../ui/PieChart"; // Update the path to your PieChart file
 import { RadarChartComponent } from "../ui/RadarChart"; // Update the path to your RadarChart file
+import TextsCard from "../Texts/TextsCard";
+import ActionsCard from "../Actions/ActionsCard";
+import { ChartConfig } from "../ui/chart";
 
 const chartData = [
   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
@@ -82,10 +81,18 @@ export default function Layout() {
           </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
+          {/* <div className="grid auto-rows-min gap-4 md:grid-cols-3"></div> */}
+          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min p-3">
+            <h1 className="text-2xl font-bold md:text-3xl mb-4">
+              Les Textes de Lois en Chiffres
+            </h1>
+            <TextsCard />
+          </div>
+          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min p-3">
+            <h1 className="text-2xl font-bold md:text-3xl mb-4">
+              Les Actions en chiffres
+            </h1>
+            <ActionsCard />
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             <PieChartComponent
