@@ -1,4 +1,4 @@
-import {Clipboard} from "lucide-react";
+import { Clipboard } from "lucide-react";
 import { TextCard } from "./TextCard";
 
 const infoCardData = [
@@ -61,4 +61,5 @@ const TextsCard: React.FC = () => {
     </div>
   );
 };
+
 export default TextsCard;

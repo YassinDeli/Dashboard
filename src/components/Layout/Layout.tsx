@@ -1,4 +1,3 @@
-// Dashbord/Page.tsx
 import { AppSidebar } from "../Sidebar/app-sidebar";
 import {
   Breadcrumb,
@@ -12,8 +11,8 @@ import { Separator } from "../ui/separator";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "../ui/sidebar";
 import DarkModeToggle from "../common/DarkModeToggle";
 import ProfileDropdown from "../common/ProfileDropdown";
-import { PieChartComponent } from "../ui/PieChart"; // Update the path to your PieChart file
-import { RadarChartComponent } from "../ui/RadarChart"; // Update the path to your RadarChart file
+import { PieChartComponent } from "../ui/PieChart";
+import { RadarChartComponent } from "../ui/RadarChart";
 import TextsCard from "../Texts/TextsCard";
 import ActionsCard from "../Actions/ActionsCard";
 import { ChartConfig } from "../ui/chart";
@@ -81,7 +80,6 @@ export default function Layout() {
           </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          {/* <div className="grid auto-rows-min gap-4 md:grid-cols-3"></div> */}
           <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min p-3">
             <h1 className="text-2xl font-bold md:text-3xl mb-4">
               Les Textes de Lois en Chiffres
@@ -102,7 +100,7 @@ export default function Layout() {
               description="Janvier - juin 2025"
               footerText=""
             />
-            <RadarChartComponent /> {/* Add the RadarChart component here */}
+            <RadarChartComponent />
             <PieChartComponent
               data={chartData}
               config={chartConfig}

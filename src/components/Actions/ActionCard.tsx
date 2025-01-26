@@ -17,8 +17,8 @@ export const ActionCard = ({
   icon: Icon,
 }: ActionCardProps) => {
   return (
-    <Card className="w-60 border shadow-md ">
-      <CardContent className="p-4">
+    <Card className="w-full border shadow-md p-4">
+      <CardContent>
         <div className="flex flex-col items-start">
           <span className={`text-sm font-medium ${titleColor}`}>{title}</span>
           <h1 className="text-3xl font-bold mt-2">
